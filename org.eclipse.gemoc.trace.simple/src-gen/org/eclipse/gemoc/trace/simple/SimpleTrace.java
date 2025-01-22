@@ -26,13 +26,13 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface SimpleTrace extends EObject {
 	/**
-	 * Returns the value of the '<em><b>States</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>States</b></em>' reference list.
 	 * The list contents are of type {@link org.eclipse.gemoc.trace.simple.RuntimeState}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>States</em>' containment reference list.
+	 * @return the value of the '<em>States</em>' reference list.
 	 * @see org.eclipse.gemoc.trace.simple.SimplePackage#getSimpleTrace_States()
-	 * @model containment="true" required="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	EList<RuntimeState> getStates();

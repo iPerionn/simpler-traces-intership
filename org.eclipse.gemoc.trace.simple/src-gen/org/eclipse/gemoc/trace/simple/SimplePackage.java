@@ -67,7 +67,7 @@ public interface SimplePackage extends EPackage {
 	int SIMPLE_TRACE = 0;
 
 	/**
-	 * The feature id for the '<em><b>States</b></em>' containment reference list.
+	 * The feature id for the '<em><b>States</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -739,10 +739,10 @@ public interface SimplePackage extends EPackage {
 	EClass getSimpleTrace();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.eclipse.gemoc.trace.simple.SimpleTrace#getStates <em>States</em>}'.
+	 * Returns the meta object for the reference list '{@link org.eclipse.gemoc.trace.simple.SimpleTrace#getStates <em>States</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>States</em>'.
+	 * @return the meta object for the reference list '<em>States</em>'.
 	 * @see org.eclipse.gemoc.trace.simple.SimpleTrace#getStates()
 	 * @see #getSimpleTrace()
 	 * @generated
@@ -1220,7 +1220,7 @@ public interface SimplePackage extends EPackage {
 		EClass SIMPLE_TRACE = eINSTANCE.getSimpleTrace();
 
 		/**
-		 * The meta object literal for the '<em><b>States</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>States</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

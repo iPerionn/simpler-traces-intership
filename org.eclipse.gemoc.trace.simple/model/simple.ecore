@@ -3,7 +3,7 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="simple" nsURI="http://www.example.org/simple" nsPrefix="simple">
   <eClassifiers xsi:type="ecore:EClass" name="SimpleTrace">
     <eStructuralFeatures xsi:type="ecore:EReference" name="states" lowerBound="1"
-        upperBound="-1" eType="#//RuntimeState" containment="true"/>
+        upperBound="-1" eType="#//RuntimeState"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rootSteps" lowerBound="1"
         upperBound="-1" eType="#//RuntimeStep" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="runtimeOnlyElements" upperBound="-1"

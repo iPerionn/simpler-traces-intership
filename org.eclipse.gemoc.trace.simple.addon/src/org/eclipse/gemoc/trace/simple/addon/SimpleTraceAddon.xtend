@@ -19,7 +19,7 @@ import org.eclipse.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.Bat
 
 class SimpleTraceAddon implements IEngineAddon {
 
-	IExecutionContext<?, ?, ?> _executionContext
+	public static IExecutionContext<?, ?, ?> _executionContext
 	var boolean needTransaction = true
 	BatchModelChangeListener listenerAddon
 	SimpleTrace trace
@@ -85,7 +85,7 @@ class SimpleTraceAddon implements IEngineAddon {
 			listenerAddon.registerObserver(this)
 
 			// We construct the trace constructor, using the concrete generated method
-			traceConstructor = new SimpleTraceConstructor(modelResource, traceResource)
+			traceConstructor = new SimpleTraceConstructor(modelResource, traceResource, rs)
 
 			// We initialize the trace
 			modifyTrace([traceConstructor.initTrace()])

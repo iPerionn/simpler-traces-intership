@@ -33,11 +33,15 @@ import org.eclipse.gemoc.trace.simple.SimpleFactory
 import org.eclipse.gemoc.trace.simple.SimpleTrace
 import org.eclipse.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.ModelChange
 import java.util.Collection
+import org.eclipse.emf.ecore.resource.ResourceSet
 
 class SimpleTraceConstructor {
 	SimpleTrace traceRoot
 	Resource executedModel
 	Resource traceResource
+	
+	ResourceSet rs
+	
 	final Deque<RuntimeStep> context = new LinkedList()
 	RuntimeState lastState
 	IDynamicPartAccessor dynamicPartAccessor = new DefaultDynamicPartAccessor
@@ -47,10 +51,11 @@ class SimpleTraceConstructor {
 
 	Map<EObject, RuntimeOnlyElement> exe2trace = new HashMap
 
-	new(Resource executedModel, Resource traceResource) {
+	new(Resource executedModel, Resource traceResource, ResourceSet rs) {
 		this.executedModel = executedModel
 		this.traceResource = traceResource
 		this.dynamicPartAccessor = dynamicPartAccessor
+		this.rs = rs
 	}
 
 	def private Set<Resource> getAllExecutedModelResources() {
@@ -157,7 +162,15 @@ class SimpleTraceConstructor {
 	def void addState(List<ModelChange> modelChanges) {
 		if (this.lastState === null || !modelChanges.isEmpty()) {
 			this.lastState = createState()
-			this.traceRoot.getStates().add(lastState)
+			
+			//this.traceRoot.getStates().add(lastState) //Old way
+			
+			this.traceRoot.states.add(lastState)
+			val URI traceModelURI = URI.createPlatformResourceURI(
+				SimpleTraceAddon._executionContext.getWorkspace().getExecutionPath().toString() + "/execution"+ lastState.number +".simpletrace", false)
+			var Resource runtimeStateResource = rs.createResource(traceModelURI)
+			runtimeStateResource.getContents().add(lastState)
+			runtimeStateResource.save(null)
 		}
 	}
 

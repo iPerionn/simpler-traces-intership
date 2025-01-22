@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.eclipse.gemoc.trace.simple.RuntimeOnlyElement;
@@ -39,7 +40,7 @@ import org.eclipse.gemoc.trace.simple.SimpleTrace;
  */
 public class SimpleTraceImpl extends MinimalEObjectImpl.Container implements SimpleTrace {
 	/**
-	 * The cached value of the '{@link #getStates() <em>States</em>}' containment reference list.
+	 * The cached value of the '{@link #getStates() <em>States</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getStates()
@@ -94,7 +95,7 @@ public class SimpleTraceImpl extends MinimalEObjectImpl.Container implements Sim
 	 */
 	public EList<RuntimeState> getStates() {
 		if (states == null) {
-			states = new EObjectContainmentEList<RuntimeState>(RuntimeState.class, this,
+			states = new EObjectResolvingEList<RuntimeState>(RuntimeState.class, this,
 					SimplePackage.SIMPLE_TRACE__STATES);
 		}
 		return states;
@@ -134,8 +135,6 @@ public class SimpleTraceImpl extends MinimalEObjectImpl.Container implements Sim
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case SimplePackage.SIMPLE_TRACE__STATES:
-			return ((InternalEList<?>) getStates()).basicRemove(otherEnd, msgs);
 		case SimplePackage.SIMPLE_TRACE__ROOT_STEPS:
 			return ((InternalEList<?>) getRootSteps()).basicRemove(otherEnd, msgs);
 		case SimplePackage.SIMPLE_TRACE__RUNTIME_ONLY_ELEMENTS:

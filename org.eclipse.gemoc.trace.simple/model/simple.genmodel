@@ -12,7 +12,7 @@
   <genPackages prefix="Simple" basePackage="org.eclipse.gemoc.trace" disposableProviderFactory="true"
       ecorePackage="simple.ecore#/">
     <genClasses ecoreClass="simple.ecore#//SimpleTrace">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simple.ecore#//SimpleTrace/states"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference simple.ecore#//SimpleTrace/states"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simple.ecore#//SimpleTrace/rootSteps"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference simple.ecore#//SimpleTrace/runtimeOnlyElements"/>
     </genClasses>

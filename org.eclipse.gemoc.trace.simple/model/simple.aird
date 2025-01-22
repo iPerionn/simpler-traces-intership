@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
-  <viewpoint:DAnalysis uid="_foE18PClEey6YbVid7S9wg" selectedViews="_f4TDQPClEey6YbVid7S9wg" version="15.0.0.202201261500">
+  <viewpoint:DAnalysis uid="_foE18PClEey6YbVid7S9wg" selectedViews="_f4TDQPClEey6YbVid7S9wg" version="15.2.0.202303281325">
     <semanticResources>simple.ecore</semanticResources>
     <semanticResources>simple.genmodel</semanticResources>
     <semanticResources>platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore</semanticResources>
@@ -911,7 +911,7 @@
     <semanticResources>platform:/resource/org.eclipse.emf.ecore/model/Ecore.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_f4TDQPClEey6YbVid7S9wg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_f6HBIPClEey6YbVid7S9wg" name="simple" repPath="#_f5gkMPClEey6YbVid7S9wg" changeId="9d30da79-b087-4b7b-be7c-361755a1b91a">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_f6HBIPClEey6YbVid7S9wg" name="simple" repPath="#_f5gkMPClEey6YbVid7S9wg" changeId="1737552012598">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="simple.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -1899,11 +1899,11 @@
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_J9q3qfCoEey6YbVid7S9wg" name="[1..*] states" sourceNode="_glWWgPClEey6YbVid7S9wg" targetNode="_hZqIUPClEey6YbVid7S9wg">
       <target xmi:type="ecore:EReference" href="simple.ecore#//SimpleTrace/states"/>
       <semanticElements xmi:type="ecore:EReference" href="simple.ecore#//SimpleTrace/states"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_WlIR8PCpEey6YbVid7S9wg" description="_AkV7UPCpEey6YbVid7S9wg" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_WlIR8vCpEey6YbVid7S9wg" showIcon="false">
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_nGF2MNjDEe-AHvkvcESDEA" description="_LkeptvEyEeyrfqoIV8lDZA" routingStyle="manhattan" strokeColor="0,0,0">
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_nGF2MtjDEe-AHvkvcESDEA" showIcon="false">
           <labelFormat>bold</labelFormat>
         </centerLabelStyle>
-        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_WlIR8fCpEey6YbVid7S9wg" labelSize="6" showIcon="false" labelColor="39,76,114"/>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_nGF2MdjDEe-AHvkvcESDEA" labelSize="6" showIcon="false" labelColor="39,76,114"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
