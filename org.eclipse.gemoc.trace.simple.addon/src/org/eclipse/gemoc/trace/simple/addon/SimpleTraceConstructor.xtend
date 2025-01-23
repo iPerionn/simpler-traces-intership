@@ -34,6 +34,15 @@ import org.eclipse.gemoc.trace.simple.SimpleTrace
 import org.eclipse.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.ModelChange
 import java.util.Collection
 import org.eclipse.emf.ecore.resource.ResourceSet
+import java.time.Instant
+import java.time.Duration
+
+/**
+ * Instant start = Instant.now();
+ * // CODE HERE        
+	Instant finish = Instant.now();
+	long timeElapsed = Duration.between(start, finish).toMillis();
+ */
 
 class SimpleTraceConstructor {
 	SimpleTrace traceRoot
@@ -41,6 +50,9 @@ class SimpleTraceConstructor {
 	Resource traceResource
 	
 	ResourceSet rs
+	
+	Instant start
+	Instant finish
 	
 	final Deque<RuntimeStep> context = new LinkedList()
 	RuntimeState lastState
@@ -161,6 +173,9 @@ class SimpleTraceConstructor {
 
 	def void addState(List<ModelChange> modelChanges) {
 		if (this.lastState === null || !modelChanges.isEmpty()) {
+			
+			this.start = Instant.now
+			
 			this.lastState = createState()
 			
 			//this.traceRoot.getStates().add(lastState) //Old way
@@ -171,6 +186,10 @@ class SimpleTraceConstructor {
 			var Resource runtimeStateResource = rs.createResource(traceModelURI)
 			runtimeStateResource.getContents().add(lastState)
 			runtimeStateResource.save(null)
+			runtimeStateResource.unload()
+			
+			this.finish = Instant.now
+			System.out.println(Duration.between(start, finish).toMillis())
 		}
 	}
 
