@@ -17,6 +17,11 @@
                id="org.eclipse.gemoc.trace.simple.addon.saveTraceOnEngineStop"
                name="saveTraceOnEngineStop">
          </addon_booleanOption>
+         <addon_booleanOption
+               defaultValue="false"
+               id="org.eclipse.gemoc.trace.simple.addon.saveTraceAsBinaryResource"
+               name="saveTraceAsBinaryResource">
+         </addon_booleanOption>
       </addon>
    </extension>
 

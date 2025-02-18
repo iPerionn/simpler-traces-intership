@@ -237,19 +237,19 @@ class SimpleTraceConstructor {
 		return traceRoot
 	}
 
-	def void save() {
+	def void save(Map<?,?> saveOptions) {
 		try {
-			traceResource.save(null)
+			traceResource.save(saveOptions)
 		} catch (IOException e) {
 			e.printStackTrace()
 		}
 
 	}
 
-	def void save(URI uri) {
+	def void save(URI uri, Map<?,?> saveOptions) {
 		try {
 			traceResource.setURI(uri)
-			traceResource.save(null)
+			traceResource.save(saveOptions)
 		} catch (IOException e) {
 			e.printStackTrace()
 		}

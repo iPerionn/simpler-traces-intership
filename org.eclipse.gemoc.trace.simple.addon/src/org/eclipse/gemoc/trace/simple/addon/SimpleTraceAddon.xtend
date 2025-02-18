@@ -16,6 +16,10 @@ import org.eclipse.gemoc.xdsmlframework.api.core.IExecutionContext
 import org.eclipse.gemoc.xdsmlframework.api.core.IExecutionEngine
 import org.eclipse.gemoc.xdsmlframework.api.engine_addon.IEngineAddon
 import org.eclipse.gemoc.xdsmlframework.api.engine_addon.modelchangelistener.BatchModelChangeListener
+import java.util.HashMap
+import org.eclipse.emf.ecore.xmi.XMLResource
+import java.util.Map
+import java.util.Collections
 
 class SimpleTraceAddon implements IEngineAddon {
 
@@ -28,6 +32,9 @@ class SimpleTraceAddon implements IEngineAddon {
 	protected boolean activateUpdateEquivalenceClasses = true;
 	protected boolean activateSaveOnEveryStep = true;
 	protected boolean activateSaveOnEngineStop = true;
+	protected boolean activateSaveAsBinaryResource = true;
+	
+	Map<Object,Object> saveOptions
 
 	override aboutToExecuteStep(IExecutionEngine<?> executionEngine, Step<?> step) {
 		manageStep(step, true)
@@ -48,7 +55,7 @@ class SimpleTraceAddon implements IEngineAddon {
 				}
 			])
 			if (activateSaveOnEveryStep) {
-				traceConstructor.save()
+				traceConstructor.save(saveOptions)
 			}
 		}
 	}
@@ -65,6 +72,15 @@ class SimpleTraceAddon implements IEngineAddon {
 				"org.eclipse.gemoc.trace.simple.addon.saveTraceOnStep", false);
 			this.activateSaveOnEngineStop = _executionContext.runConfiguration.getAttribute(
 				"org.eclipse.gemoc.trace.simple.addon.saveTraceOnEngineStop", true);
+			this.activateSaveAsBinaryResource = _executionContext.runConfiguration.getAttribute(
+				"org.eclipse.gemoc.trace.simple.addon.saveTraceAsBinaryResource", false);
+			
+			this.saveOptions = new HashMap()
+			if (activateSaveAsBinaryResource) this.saveOptions.put(XMLResource.OPTION_BINARY, Boolean.TRUE)
+				
+			this.saveOptions = if (activateSaveAsBinaryResource) 
+       			newHashMap(XMLResource.OPTION_BINARY -> Boolean.TRUE) 
+       			else Collections.emptyMap()
 
 			val modelResource = _executionContext.resourceModel
 
@@ -95,9 +111,7 @@ class SimpleTraceAddon implements IEngineAddon {
 
 	override engineStopped(IExecutionEngine<?> engine) {
 		if (activateSaveOnEngineStop) {
-
-			traceConstructor.save()
-
+			traceConstructor.save(saveOptions)
 		}
 	}
 
