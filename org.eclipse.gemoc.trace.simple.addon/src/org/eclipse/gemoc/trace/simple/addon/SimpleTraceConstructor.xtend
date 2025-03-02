@@ -236,7 +236,15 @@ class SimpleTraceConstructor {
 		traceResource.getContents().add(traceRoot)
 		return traceRoot
 	}
-
+	
+	/**
+	 * This method calls {@code save()} on the {@code traceResource} object, 
+	 * which is an implementation of {@link org.eclipse.emf.ecore.resource.Resource}, 
+	 * with the provided save options.
+	 *
+	 * @param saveOptions A map containing the save options to be passed to the {@code save()} method of the EMF resource.
+	 * 	 
+	 */
 	def void save(Map<?,?> saveOptions) {
 		try {
 			traceResource.save(saveOptions)
@@ -245,7 +253,18 @@ class SimpleTraceConstructor {
 		}
 
 	}
-
+	
+	/**
+	 * Sets a new URI for the EMF resource and saves it using the specified save options.
+	 *
+	 * This method updates the URI of {@code traceResource}, which is an implementation 
+	 * of {@link org.eclipse.emf.ecore.resource.Resource}, before calling {@code save()} 
+	 * with the given save options.
+	 *
+	 * @param uri        The URI under which the resource should be saved.
+	 * @param saveOptions A map containing the save options to be passed to 
+	 *                    the {@code save()} method of the EMF resource.
+	 */
 	def void save(URI uri, Map<?,?> saveOptions) {
 		try {
 			traceResource.setURI(uri)

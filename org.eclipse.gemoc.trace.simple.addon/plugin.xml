@@ -20,7 +20,8 @@
          <addon_booleanOption
                defaultValue="false"
                id="org.eclipse.gemoc.trace.simple.addon.saveTraceAsBinaryResource"
-               name="saveTraceAsBinaryResource">
+               name="saveTraceAsBinaryResource"
+               shortDescription="save the trace model as a Binary Resource instead of XMI">
          </addon_booleanOption>
       </addon>
    </extension>

@@ -76,7 +76,9 @@ class SimpleTraceAddon implements IEngineAddon {
 				"org.eclipse.gemoc.trace.simple.addon.saveTraceAsBinaryResource", false);
 			
 			this.saveOptions = new HashMap()
-			if (activateSaveAsBinaryResource) this.saveOptions.put(XMLResource.OPTION_BINARY, Boolean.TRUE)
+			if (activateSaveAsBinaryResource){
+				this.saveOptions.put(XMLResource.OPTION_BINARY, Boolean.TRUE)	
+			}
 				
 			this.saveOptions = if (activateSaveAsBinaryResource) 
        			newHashMap(XMLResource.OPTION_BINARY -> Boolean.TRUE) 
